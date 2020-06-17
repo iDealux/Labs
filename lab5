@@ -1,0 +1,34 @@
+//Дана квадратная матрица. Составить программу, которая прибавила бы каждому элементу данной строки элемент, который принадлежит этой строке и главной диагонали.
+#include <iostream>
+using namespace std;
+int main()
+{
+    setlocale(0, "rus");
+    int n;
+    cout << "n="; cin >> n;
+    double** a = new double* [n], b;
+    for (int i = 0; i < n; i++)
+        a[i] = new double[n];
+    cout << "Исходная матрица:\n";
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            a[i][j] = rand() % 9 + 1;
+            cout << a[i][j] << " ";
+        }
+        cout << "\n";
+    }
+    cout << "Изменённая матрица:\n";
+    for (int i = 0; i < n; i++)
+    {
+        b = a[i][i];
+        for (int j = 0; j < n; j++)
+        {
+            a[i][j] += b;
+            cout << a[i][j] << " ";
+        }
+        cout << "\n";
+    }
+    return 0;
+}
