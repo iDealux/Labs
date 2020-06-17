@@ -1,0 +1,31 @@
+Подсчитать и вывести на экран количество предложений в тексте.
+#include <iostream>
+#include <string>
+using namespace std;
+
+bool isNeededChar(char c) {
+	switch (c) {
+	case '.':
+	case '!':
+	case '?':
+		return true;
+	default:
+		return false;
+	}
+}
+
+int main() {
+	setlocale(0, "rus");
+	int counter = 0;
+	string text;
+	getline(cin, text);
+	for (int i = 1; i < text.length(); i++) {
+		if (isNeededChar(text.at(i))) {
+			if (!isNeededChar(text.at(i - 1))) {
+				counter++;
+			}
+		}
+	}
+	cout << "\n Количество предложений: " << counter << endl;
+	return 0;
+}
