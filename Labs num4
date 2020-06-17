@@ -1,0 +1,24 @@
+//Дан массив из N действительных чисел. Заменить все его члены, большие данного Z, этим числом. Подсчитать количество замен.
+#include <iostream>
+using namespace std;
+int main() 
+{
+	setlocale(0, "RUS");
+	const int n = 10;
+	int i, q = 0;
+	float z, A[n];
+	std::cout << "Введите последовательность " << n << " чисел: \n";
+	for (i = 0; i < n; i++)
+		std::cin >> A[i];
+	std::cout << "Введите число Z: \n";
+	std::cin >> z;
+	for (i = 0; i < n; i++) 
+  {
+		if (A[i] > z) 
+    {
+			A[i] = z;
+			q++;
+		}
+	}
+	std::cout << "\n Количество замен: " << q;
+}        
