@@ -1,0 +1,22 @@
+Разработать программу вычисления периметра треугольника по координатам трех его вершин, используя функцию вычисления длины отрезка, соединяющего две точки.
+#include <iostream>
+#include <cmath>
+double L(int x, int y, int x1, int y1)
+{
+    double x2 = (double)(x - x1) * (x - x1);
+    double y2 = (double)(y - y1) * (y - y1);
+    return sqrt(x2 + y2);
+}
+long int a, b, c, d, e, f;
+double s1, s2, s3, s, p, P;
+using namespace std;
+
+int main() {
+    cin >> a >> b >> c >> d >> e >> f;
+    s1 = L(a, b, c, d);
+    s2 = L(c, d, e, f);
+    s3 = L(e, f, a, b);
+    P = s1 + s2 + s3;
+    cout << P;
+    return 0;
+}
